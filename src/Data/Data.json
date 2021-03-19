@@ -1,0 +1,21 @@
+[{
+    "id": 1,
+    "ride_name": "Bike",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1bb6uZYNcTQakVuOcd_VPrsEn7TQzp57Svg&usqp=CAU",
+    "price": "৳8.44"
+  }, {
+    "id": 2,
+    "ride_name": "Car",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrMI-nSV6L4kitBRbS0Qg2oYHrq3H-ko9J3g&usqp=CAU",
+    "price": "৳16.52"
+  }, {
+    "id": 3,
+    "ride_name": "Bus",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ODOjDNO6SW0t6rAsM45HX4CGE9fhh35WBQ&usqp=CAU",
+    "price": "৳5.40"
+  }, {
+    "id": 4,
+    "ride_name": "Train",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjzQEUQjaviSUX4AwxsKOP9WcS3A30boGYFg&usqp=CAU",
+    "price": "৳12.14"
+  }]
