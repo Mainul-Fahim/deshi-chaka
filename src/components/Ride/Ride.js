@@ -8,7 +8,7 @@ const Ride = (props) => {
         <div className="col-md-3 pl-5 pt-5 mt-5">
             <div className="ride">
                 <img src={image} alt=""/>
-                <h4><Link to="/about">{ride_name}</Link></h4>
+                <h4><Link to={`/pickRIde/${ride_name}`}>{ride_name}</Link></h4>
 
             </div>
         </div>
