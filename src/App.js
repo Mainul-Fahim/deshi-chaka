@@ -11,6 +11,7 @@ import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
 import SignUp from './components/SignUp/SignUp';
 import PickRIde from './components/PickRide/PickRIde';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext=createContext();
 
@@ -20,14 +21,14 @@ function App() {
     return (
    
         <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-        
+            <h1>name:{loggedInUser.name}</h1>
         <Router>
             <Switch>
                 <Route path="/header">
                     <Header></Header>
                 </Route>
                 <Route exact path="/">
-                    <Header></Header>
+                    <Home></Home>
                 </Route>
                 <Route path="/home">
                     <Home></Home>
@@ -35,9 +36,9 @@ function App() {
                 <Route path="/signUp">
                    <SignUp></SignUp>
                 </Route>
-                <Route path="/pickRide/:rideName">
+                <PrivateRoute path="/pickRide/:rideName">
                     <PickRIde></PickRIde>
-                </Route>
+                </PrivateRoute>
                 <Route path="*">
                     <NotFound></NotFound>
                 </Route>

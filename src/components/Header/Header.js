@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button,Col,Nav, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import Logo from '../../Images/Deshi-Chaka-logo.png';
 import '../Header/Header.css';
+
 const Header = () => {
+    
+    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     return (
         <div>
             <Row>
@@ -26,7 +30,7 @@ const Header = () => {
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link>
-                    <Link to="/signUp">Login</Link>
+                    {loggedInUser.email ?loggedInUser.email:<Link to="/signUp">Login</Link>}
                     </Nav.Link>
                 </Nav.Item>
             </Nav></Col>

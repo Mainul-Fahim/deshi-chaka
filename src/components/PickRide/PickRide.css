@@ -13,3 +13,18 @@
     margin: 5px 5px;
     border-bottom: 1px solid grey;
 }
+.ride-details{
+    display:flex;
+    border: 1px solid blue;
+    margin-top:3%;
+    margin-right: 13%;
+    background-color: antiquewhite;
+}
+.ride-details img{
+    height: 30px;
+    width: 30px;
+    margin-left:4px;
+}
+.ride-details p{
+    margin-left: 30px;
+}

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import Header from '../Header/Header';
 import '../SignUp/SignUp.css';
 import firebase from "firebase/app";
@@ -13,6 +13,9 @@ if(firebase.apps.length===0){
 }
 const SignUp = () => {
 
+    const history=useHistory();
+    const location =useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
     const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
@@ -57,6 +60,7 @@ const SignUp = () => {
                     newUserInfo.error = '';
                     newUserInfo.success = true;
                     updateUserInfo(user.name);
+                    history.replace(from);
                     // ...
                 })
                 .catch((error) => {
@@ -76,6 +80,9 @@ const SignUp = () => {
                     const newUserInfo = { ...user };
                     newUserInfo.error = '';
                     newUserInfo.success = true;
+                    setUser(newUserInfo);
+                    setLoggedInUser(newUserInfo);
+                    history.replace(from);
                     // ...
                 })
                 .catch((error) => {
@@ -85,6 +92,7 @@ const SignUp = () => {
                     newUserInfo.error = error.message;
                     newUserInfo.success = false;
                     setUser(newUserInfo);
+                    history.replace(from);
                 });
         }
         e.preventDefault();
@@ -115,6 +123,7 @@ const SignUp = () => {
                 const {displayName,email} = result.user;
                 const signedInUser={name:displayName,email};
                 setLoggedInUser(signedInUser);
+                history.replace(from);
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
