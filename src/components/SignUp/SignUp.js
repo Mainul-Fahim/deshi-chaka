@@ -152,11 +152,11 @@ const SignUp = () => {
                     {newUser && <input type="password" name="confirm password" placeholder="Confirm Password" required onBlur={handleChange} />}
                     <br />
                     {/* <Button variant="success">Create an account</Button> */}
-                    <input type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
+                    <input style={{backgroundColor:'green',color:'white'}} type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
                     <br />
                     <Row>
                         <Col>
-                            <p>Don't have an account?</p>
+                            {!newUser && <p>Don't have an account?</p>}
                         </Col>
                         <Col>
                             <input type="checkbox" name="newUser" onChange={() => setNewUser(!newUser)} id="" />
@@ -165,7 +165,7 @@ const SignUp = () => {
                     </Row>
                 </form>
                 <br />
-                <button onClick={handleGoogleSignIn}>Google Sign In</button>
+                <button style={{backgroundColor:'green',color:'white'}} onClick={handleGoogleSignIn}>Google Sign In</button>
                 <p style={{ color: 'red' }}>{user.error}</p>
                 {
                     user.success && <p style={{ color: 'green' }}>User {newUser ? 'created' : 'logged in'} successfully</p>

@@ -30,7 +30,7 @@ const Header = () => {
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link>
-                    {loggedInUser.email ?loggedInUser.email:<Link to="/signUp">Login</Link>}
+                    {loggedInUser.email ?loggedInUser.email:<Link to="/signUp"><Button>Login</Button></Link>}
                     </Nav.Link>
                 </Nav.Item>
             </Nav></Col>
